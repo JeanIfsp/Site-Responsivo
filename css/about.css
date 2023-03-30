@@ -1,0 +1,42 @@
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: fit-content;
+}
+
+.span-date-of-birth {
+    color: rgba(128, 128, 128, 0.418);
+    display: inline-block;
+    margin: 20px 0 calc(40px * 1.2) 0;
+}
+
+
+.flexbox {
+    display: flex;
+    flex-flow: row wrap;
+
+    width:  100vw;
+    height: 100%;
+
+
+}
+
+.flexbox-container-image {
+    flex: 1 1 450px;
+    object-fit: cover;
+}
+
+.flexbox-image {
+    width:  100%;
+    height: 100%;
+}
+
+.flexbox-article {
+    flex: 1 1 550px;
+    padding: 4.5rem 3rem;
+}
+
+

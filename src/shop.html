@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/style.css" />
+        <title>Zelia Ducan</title>
+        <style>
+            .main {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                width: 100%;
+                min-height: 100vh;
+
+                padding: 100px 20px;
+                height: 100%;
+            }
+
+            .list-products{
+                gap: 20px;
+                display: flex;
+                flex-flow: row wrap;
+
+                max-width: 800px;
+
+            }
+
+            .product {
+                padding: 10px;
+                flex: 1 1 200px;
+                height: fit-content;
+                position: relative;
+                border: 1px solid rgba(128, 128, 128, 0.267);
+
+                box-shadow: 0 0 10px 2px rgb(255 67 67 / 3%);
+                background-color:  rgb(246 246 246);
+            }
+
+
+            .list-buttons {
+
+                z-index: 100;
+                opacity: 0;
+                display: inline-flex;
+                flex-direction: column;
+
+                visibility: hidden;
+
+                position: absolute;
+
+
+                top: -100px;
+                left: 10px;
+
+                transition: visibility 100ms, transform 200ms, opacity 200ms;
+
+            }
+
+            .product:hover .list-buttons{
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(110px);
+            }
+
+            .product:hover::before {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            .product:hover::after {
+                visibility: visible;
+                opacity: 1;
+                height: 100%;
+            }
+
+
+
+
+            .product::before, .product::after{
+                content: '';
+                opacity: 0;
+                visibility: hidden;
+                position: absolute;
+                transition: visibility 100ms;
+            }
+
+            .product::after {
+                z-index: 2;
+                width: 100%;
+                height: 0px;
+                bottom: 0; left: 0;
+                backdrop-filter: blur(10px);
+                transition: height 300ms;
+
+            }
+            .product::before{
+                z-index: 1;
+                top: 10px; left: 10px;
+                width: 50px;
+                height: 100px;
+                background-color: red;
+                transition: opacity 100ms 300ms;
+            }
+
+
+
+            .container-product-image {
+                width:  100%;
+                height: 100%;
+                position: relative;
+            }
+
+            .product-image {
+                width:  100%;
+                height: 100%;
+                background-size: cover;
+            }
+
+            .product-name {
+                text-align: center;
+                padding: 10px 0;
+                color: #000000d4;
+                font: 400 10px monospace;
+            }
+
+
+
+            .button {
+                width: 50px;
+                height: 50px;
+                cursor: pointer;
+            }
+
+
+
+            .buy {
+
+                background-image: url("https://cdn-icons-png.flaticon.com/32/2420/2420157.png");
+                background-size: 25px;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            .add {
+                text-align: center;
+                line-height: 50px;
+            }
+
+            .link {
+                color: black;
+            }
+
+
+
+
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            <nav class="nav">
+                <ul class="menu">
+                    <li><a class="menu-link" href="./about.html">Sobre</a></li>
+                    <li><a class="menu-link" href="./music.html">Músicas</a></li>
+                    <li><a class="menu-link" href="./shop.html">Shop</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="main">
+            <section>
+                <h1 class="title" style="margin-bottom: 50px">Produtos</h1>
+                <ul class="list-products">
+                    <li class="product">
+                        <a href="">
+                            <figure class="container-product-image">
+                                <img class="product-image"
+                                    src=" https://universalmusic.vteximg.com.br/arquivos/ids/173707-355-355/vinil-zelia-duncan-pelespirito-vinil-zelia-duncan-pelespirito-00602438173587-26060243817358.jpg?v=637847760063630000"
+                                    alt="vinil">
+                                <figcaption class="product-name">Disco Vinil</figcaption>
+                            </figure>
+                            <ul class="list-buttons">
+                                <li class="button add"><a class="link" href="#">+</a></li>
+                                <li class="button buy"><a class="link" href="#"></a></li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li class="product">
+                        <a href="">
+                            <figure class="container-product-image">
+                                <img class="product-image"
+                                    src="https://universalmusic.vteximg.com.br/arquivos/ids/173921-355-355/kit-zelia-duncan-vinil-pelespirito-camiseta-pelespirito-bege-card-autografado-kit-zelia-duncan-vinil-pelespirito-c-00602445868650-26060244586865.jpg?v=637854542425770000"
+                                    alt="vinil">
+                                <figcaption class="product-name">Camiseta Branca, Card e Disco vinil</figcaption>
+                            </figure>
+                            <ul class="list-buttons">
+                                <li class="button add"><a class="link" href="#">+</a></li>
+                                <li class="button buy"><a class="link" href="#"></a></li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li class="product">
+                        <a href="">
+                            <figure class="container-product-image">
+                                <img class="product-image"
+                                src="https://universalmusic.vteximg.com.br/arquivos/ids/165784-355-355/cd-zelia-duncan-pelespirito-cd-zelia-duncan-pelespirito-00602438125401-26060243812540.jpg?v=637571122503170000" alt="vinil">
+                                <figcaption class="product-name">CD </figcaption>
+                            </figure>
+                            <ul class="list-buttons">
+                                <li class="button add"><a class="link" href="#">+</a></li>
+                                <li class="button buy"><a class="link" href="#"></a></li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li class="product">
+                        <a href="">
+                            <figure class="container-product-image">
+                                <img class="product-image"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLnzNG7NW2-QVuvy4_Eb_5zqL4LEs2LyV1wtF5faK-El7BcP_8yloGI5KiZZx7cQC31x4&usqp=CAU" alt="vinil">
+                                <figcaption class="product-name"> Camiseta Branca, Card e Disco vinil</figcaption>
+                            </figure>
+                            <ul class="list-buttons">
+                                <li class="button add"><a class="link" href="#">+</a></li>
+                                <li class="button buy"><a class="link" href="#"></a></li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li class="product">
+                        <a href="">
+                            <figure class="container-product-image">
+                                <img class="product-image"
+                                src="https://universalmusic.vteximg.com.br/arquivos/ids/173917-355-355/kit-zelia-duncan-vinil-pelespirito-camiseta-pelespirito-azul-card-autografado-kit-zelia-duncan-vinil-pelespirito-c-00602445867509-26060244586750.jpg?v=637854540460770000" alt="vinil">
+                                <figcaption class="product-name"> Camiseta Branca, Card e Disco vinil</figcaption>
+                            </figure>
+                            <ul class="list-buttons">
+                                <li class="button add"><a class="link" href="#">+</a></li>
+                                <li class="button buy"><a class="link" href="#"></a></li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li class="product">
+                        <a href="">
+                            <figure class="container-product-image">
+                                <img class="product-image"
+                                src="https://universalmusic.vteximg.com.br/arquivos/ids/168906-355-355/camiseta-zelia-duncan-pelespirito-1-frente-e-verso-camiseta-zelia-duncan-pelespirito-1-f-00602438267187-26060243826718.jpg?v=637753602696400000" alt="vinil">
+                                <figcaption class="product-name"> Camiseta</figcaption>
+                            </figure>
+                            <ul class="list-buttons">
+                                <li class="button add"><a class="link" href="#">+</a></li>
+                                <li class="button buy"><a class="link" href="#"></a></li>
+                            </ul>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </main>
+        <footer class="footer">
+            <span class="span">Zelia Ducan</span>
+        </footer>
+    </body>
+</html>
